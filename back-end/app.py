@@ -4,6 +4,9 @@
 # -*- coding: utf-8 -*-
 from flask import Flask,request, jsonify
 
+# flask CORS
+from flask_cors import CORS
+
 # config import
 from config import app_config, app_active
 
@@ -19,6 +22,8 @@ db_connect = create_engine('mysql+mysqlconnector://root@localhost/fatec')
 def create_app(config_name):
     app = Flask(__name__, template_folder='templates')
     
+    CORS(app)
+    
     app.secret_key = config.SECRET
     app.config.from_object(app_config[config_name])
     app.config.from_pyfile('config.py')
@@ -28,8 +33,10 @@ def create_app(config_name):
     @app.route('/monitoramento/', methods=['GET'])
     def get_all():
         conn = db_connect.connect()
+        
+        limit = request.args.get('limit', default=20, type=int)
 
-        query = conn.execute(text('select * from monitoramento order by temperatura'))
+        query = conn.execute(text(f'select * from monitoramento order by temperatura LIMIT {limit}'))
 
         result = [dict(zip(tuple(query.keys()), i)) for i in query.cursor]
 

@@ -32,7 +32,7 @@ h1 {
   border-radius: 10px;
 }
 
-.alunos {
+.monitoramento {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 30px;
@@ -65,18 +65,11 @@ h1 {
   font-weight: normal;
   position: relative;
   z-index: 2;
+  color: #FFF;
 }
 
-.card-description {
-  margin-top: 5px;
-  color: rgb(255, 255, 255);
-  font-weight: lighter;
-  position: relative;
-  z-index: 2;
-}
-
-.card-email {
-  margin-top: 5px;
+.card-description{
+  margin-top: 1px;
   color: rgb(255, 255, 255);
   font-size: 26px;
   font-weight: lighter;
@@ -91,6 +84,7 @@ h1 {
   box-shadow: 0px 0px 8px 5px rgb(75, 2, 2);
   position: relative;
   z-index: 2;
+  border-radius: 20px;
 }
 
 @keyframes bounce {
