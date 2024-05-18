@@ -13,7 +13,7 @@ const getPosts = async (param) => {
 
 const monitoramentosFromFedd = monitoramentos => monitoramentos.map( item => `
     <li class="card ${'normal'}">
-    <img class="card-image" alt=${item.dispositivo} src="avatar.jpg"/>
+    <img class="card-image" alt=${item.dispositivo} src="avatar.png"/>
     <h2 class="card-title">${item.dispositivo}</h2>
     <p class="card-description">Temperatura: ${item.temperatura}°</p>
     <p class="card-description">Umidade: ${item.umidade}</p>
@@ -22,7 +22,7 @@ const monitoramentosFromFedd = monitoramentos => monitoramentos.map( item => `
 
 const monitoramentosFromSearch = monitoramentos => monitoramentos.map( item => `
     <li class="card ${'normal'}">
-    <img class="card-image" alt=${item.dispositivo} src="avatar.jpg"/>
+    <img class="card-image" alt=${item.dispositivo} src="avatar.png"/>
     <h2 class="card-title">${item.dispositivo}</h2>
     <p class="card-description">Temperatura: ${item.temperatura}°</p>
     <p class="card-description">Umidade: ${item.umidade}</p>

@@ -1,4 +1,3 @@
-#   Nome: Igor Assis Baroni
 
 
 # -*- coding: utf-8 -*-
